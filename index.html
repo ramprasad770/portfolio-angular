@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-critters-container>
+<head>
+  <meta charset="utf-8">
+  <title>PortfolioApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./assets/logos/1.webp">
+  <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css" type="text/stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<style>:root{--fa-style-family-brands:"Font Awesome 6 Brands";--fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands"}@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url(fa-brands-400.b6033b540dd66f84.woff2) format("woff2"),url(fa-brands-400.9a905705860d0777.ttf) format("truetype")}:root{--fa-style-family-classic:"Font Awesome 6 Free";--fa-font-regular:normal 400 1em/1 "Font Awesome 6 Free"}@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url(fa-regular-400.3580b4a95c9bb1d5.woff2) format("woff2"),url(fa-regular-400.67a0fb748649533d.ttf) format("truetype")}:root{--fa-style-family-classic:"Font Awesome 6 Free";--fa-font-solid:normal 900 1em/1 "Font Awesome 6 Free"}@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(fa-solid-900.fd0b155cd663a8fa.woff2) format("woff2"),url(fa-solid-900.6a8db53d80e9da0c.ttf) format("truetype")}*{box-sizing:border-box;margin:0;padding:0}</style><link rel="stylesheet" href="styles.51b9105e409aa7c0.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.51b9105e409aa7c0.css"></noscript></head>
+<body>
+  <app-root></app-root>
+  <script defer src="https://smtpjs.com/v3/smtp.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script>
+  function sendMsg(){
+    var name=document.getElementById("name").value;
+    var email=document.getElementById("email").value;
+    var ph_num=document.getElementById("ph_num").value;
+    var msg=document.getElementById("msg").value;
+    const alert = document.querySelector("#alert");
+    const bsAlert = new bootstrap.Alert(alert);
+    
+    Email.send({
+      Host : "smtp.elasticemail.com",
+      Username : "198a1a05c1ram@gmail.com",
+      Password : "5BFDCD6273ABA91869963D96E2321381941B",
+      To : 'padevenkataramprasad@gmail.com',
+      From :'198a1a05c1ram@gmail.com',
+      Subject:'You got feedback from '+name,
+      Body : "Details of sender <br>"+
+      "Name :"+name+"<br>"+
+      "Email :"+email+"<br>"+
+      "Phone number :"+ph_num+"<br>"+
+      "Message :<br>"+msg
+    }).then(
+      document.getElementById("alert").style.display = "block"
+      );
+      setTimeout(() => {document.getElementById("alert").style.display = "none"}, 2000);}
+  </script>
+<script src="runtime.703ca58ce078bb95.js" type="module"></script><script src="polyfills.31a06e4aef124ac8.js" type="module"></script><script src="main.73fc53e4825a9036.js" type="module"></script></body>
+</html>
